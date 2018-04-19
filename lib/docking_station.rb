@@ -8,12 +8,12 @@ class DockingStation
   end
 
   def release_bike
-    raise 'No Bikes' unless @bikes
+    raise 'No Bikes' if @bikes.length == 0
     Bike.new
   end
 
   def dock(bike)
-    raise 'Capacity full' if @bikes
-    @bikes = bike
+    raise 'Capacity full' if @bikes.length >= 20
+    @bikes << bike
   end
 end

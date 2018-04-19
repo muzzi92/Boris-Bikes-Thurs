@@ -9,8 +9,7 @@ describe DockingStation do
 
   it 'should release a working bike' do
     subject.dock(Bike.new)
-    bike = subject.release_bike
-    expect(bike).to be_working
+    expect(subject.release_bike).to be_working
   end
 
   it 'should allow a bike to be docked' do
@@ -21,15 +20,10 @@ describe DockingStation do
     expect(subject).to respond_to(:bikes)
   end
 
-  it 'docks a bike' do
-    new_bike = Bike.new
-    expect(subject.dock(new_bike)).to eq(new_bike)
-  end
-
-  it 'states what bike is docked' do
+  it 'docks and states a bike ' do
     new_bike = Bike.new
     subject.dock(new_bike)
-    expect(subject.bikes).to eq(new_bike)
+    expect(subject.bikes).to include(new_bike)
   end
 
   it 'release_bike raises an error when no bikes available' do
@@ -37,8 +31,7 @@ describe DockingStation do
   end
 
   it 'dock raises an error when bike capacity full' do
-    subject.dock(Bike.new)
-    expect { subject.dock(Bike.new) }.to raise_error(RuntimeError, 'Capacity full')
+    expect { 21.times{subject.dock(Bike.new)} }.to raise_error(RuntimeError, 'Capacity full')
   end
 
 end
