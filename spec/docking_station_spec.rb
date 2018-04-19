@@ -18,7 +18,7 @@ describe DockingStation do
   end
 
   it 'should respond to bike method' do
-    expect(subject).to respond_to(:bike)
+    expect(subject).to respond_to(:bikes)
   end
 
   it 'docks a bike' do
@@ -29,7 +29,7 @@ describe DockingStation do
   it 'states what bike is docked' do
     new_bike = Bike.new
     subject.dock(new_bike)
-    expect(subject.bike).to eq(new_bike)
+    expect(subject.bikes).to eq(new_bike)
   end
 
   it 'release_bike raises an error when no bikes available' do
