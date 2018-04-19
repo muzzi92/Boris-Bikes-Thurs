@@ -31,7 +31,8 @@ describe DockingStation do
   end
 
   it 'dock raises an error when bike capacity full' do
-    expect { 21.times{subject.dock(Bike.new)} }.to raise_error(RuntimeError, 'Capacity full')
+    times_to_run = subject.DEFAULT_CAPACITY + 1
+    expect { times_to_run.times{subject.dock(Bike.new)} }.to raise_error(RuntimeError, 'Capacity full')
   end
 
 end
