@@ -35,4 +35,8 @@ describe DockingStation do
     expect { times_to_run.times{subject.dock(Bike.new)} }.to raise_error(RuntimeError, 'Capacity full')
   end
 
+  it 'allows the user to set the capacity' do
+    new_dock = DockingStation.new(15)
+    expect(new_dock.DEFAULT_CAPACITY).to eq 15
+  end
 end
