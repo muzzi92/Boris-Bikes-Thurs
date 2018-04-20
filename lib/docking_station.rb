@@ -15,6 +15,16 @@ class DockingStation
     taken_bike
   end
 
+  def release_for_fixing
+    @bikes.each do |bike|
+      if bike.working? == false
+        @bikes.delete(bike)
+        return bike
+      end
+    end
+  end
+
+
   def dock(bike)
     raise 'Capacity full' if full?
     @bikes << bike

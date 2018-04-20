@@ -10,7 +10,6 @@ let(:bike) { double :bike }
     expect(subject.release_bike).to be_working
   end
 
-
   it 'docks and states a bike' do
     new_bike = bike
     subject.dock(new_bike)
