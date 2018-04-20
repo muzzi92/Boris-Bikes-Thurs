@@ -3,18 +3,12 @@ require 'bike'
 
 describe DockingStation do
 
-  it 'should respond to release_bike method' do
-    expect(subject).to respond_to(:release_bike)
-  end
 
   it 'should release a working bike' do
     subject.dock(double(:bike))
     expect(subject.release_bike).to be_working
   end
 
-  it 'should respond to bike method' do
-    expect(subject).to respond_to(:bikes)
-  end
 
   it 'docks and states a bike' do
     new_bike = (double(:bike))
