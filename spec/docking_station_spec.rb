@@ -35,9 +35,6 @@ describe DockingStation do
     new_dock = DockingStation.new(15)
     expect(new_dock.DEFAULT_CAPACITY).to eq 15
   end
-end
-
-describe DockingStation do
 
   it 'does not release a broken bike' do
     broken_bike = Bike.new
