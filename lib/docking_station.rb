@@ -11,7 +11,7 @@ class DockingStation
   def release_bike
     raise 'No Bikes' if empty?
     taken_bike = @bikes.shift
-    raise "Bike Broken" if taken_bike.working? == false
+    raise 'Bike is broken' if taken_bike.working? == false
     taken_bike
   end
 

@@ -1,5 +1,5 @@
 class Bike
-  attr_reader :working_condition
+  attr_accessor :working_condition
 
   def initialize
     @working_condition = true

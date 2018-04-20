@@ -38,7 +38,8 @@ describe DockingStation do
 
   it 'does not release a broken bike' do
     broken_bike = Bike.new
-    subject.dock(broken_bike.broken)
+    broken_bike.broken
+    subject.dock(broken_bike)
     expect { subject.release_bike }.to raise_error(RuntimeError, 'Bike is broken')
   end
 end
